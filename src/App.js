@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Navigation from './components/Navigation/Navigation';
+import Board from './components/Board/Board';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      today: {},
+    }
+    this.getCurrentDate = this.getCurrentDate.bind(this);
+  }
+
+  componentDidMount() {
+    this.getCurrentDate()
+  }
+
+  getDaysInMonth(month, year) {
+    return new Date(year, month, 0).getDate();
+  }
+
+  getCurrentDate() {
+    const currentDate = new Date();
+    this.setState({
+      today: {
+        year: currentDate.getFullYear(),
+        month: currentDate.getMonth() + 1,
+        date: currentDate.getDate(),
+      }
+    })
+  }
+
+  render() {
+    console.log('render in App.js')
+    return (
+      <div className="App" >
+        <Navigation 
+          today={this.state.today}
+        />
+        <Board
+          today={this.state.today}
+          getDaysInMonth={this.getDaysInMonth}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

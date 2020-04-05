@@ -1,0 +1,8 @@
+.grid-board{
+    display: grid;
+    height: 80vh;
+    grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    justify-content: center;
+}
+
