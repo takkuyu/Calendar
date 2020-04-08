@@ -96,6 +96,10 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.modal-window .modal-content button:focus {
+  outline: 0;
+}
+
 .modal-window .modal-content .task-modal {
   display: -webkit-box;
   display: -ms-flexbox;

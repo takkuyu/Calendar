@@ -7,6 +7,7 @@ import Task from '../Task/Task';
 class Card extends Component {
 
     generateTaskCards(tasks) {
+        // console.log(tasks)
         if (tasks.length > 0) {
             let i = 1;
             return tasks.map(task => {

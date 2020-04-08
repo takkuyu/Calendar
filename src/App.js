@@ -198,28 +198,36 @@ class App extends Component {
 
 
 
-  displayBoard(board, year) {
+  displayBoard(board, year) { //@TODO ; Replace year with card.year
     const today = String(new Date()).substring(0, 10);
-    
+    // const thisyear = year;
+
     return board.map(card => {
       const tasks = [];
+      // year = thisyear
       let isToday = false;
-      // isToday = !isToday;
+
+      if(card.month === 0){
+        card.month = 12;
+        console.log(card)
+        year = year -1;
+      }else if(card.month === 13){
+        card.month = 1;
+      }
 
       this.state.tasks.forEach(task => {
         const thisCardKey = card.day + '/' + card.month + '/' + year;
         if (task.key === thisCardKey) {
-          console.log('same: ' + thisCardKey)
           tasks.push(task)
         }
       })
 
       const thisday = String(new Date(year, card.month - 1, card.day)).substring(0, 10);
-      console.log(thisday)
 
       if (today === thisday) {
         isToday = !isToday;
       }
+
 
       return (
         <Card
@@ -244,6 +252,7 @@ class App extends Component {
       taskModal: false
     })
   }
+
 
   render() {
     // console.log('render in App.js')
@@ -302,6 +311,7 @@ class App extends Component {
           today={this.state.today}
           generateLastMonthBoard={this.generateLastMonthBoard}
           generateNextMonthBoard={this.generateNextMonthBoard}
+          getCurrentDate={this.getCurrentDate}
         />
         <Board
           today={this.state.today}

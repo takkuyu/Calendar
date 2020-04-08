@@ -37,4 +37,21 @@ header .angle {
   display: inline-block;
   cursor: pointer;
 }
+
+header button {
+  font-size: 1rem;
+  background: #fff;
+  padding: .4rem .8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 2em;
+}
+
+header button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+header button:focus {
+  outline: 0;
+}
 /*# sourceMappingURL=Navigation.css.map */

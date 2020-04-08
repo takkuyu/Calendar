@@ -17,6 +17,7 @@ const Navigation = (props) => {
                 <i onClick={props.generateNextMonthBoard} className="fas fa-angle-right angle"></i>
             </div>
             <h2>{props.today.month} / {props.today.year}</h2>
+            <button onClick={props.getCurrentDate}>Today</button>
         </header>
     );
 }
