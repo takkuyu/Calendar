@@ -3,15 +3,16 @@ import './Card.css';
 import Task from '../Task/Task';
 
 
+
 class Card extends Component {
 
-    generateTaskCards() {
-        if (this.props.tasks.length > 0) {
-            // console.log('generateTask')
+    generateTaskCards(tasks) {
+        if (tasks.length > 0) {
             let i = 1;
-            return this.props.tasks.map(task => {
+            return tasks.map(task => {
                 return (
                     <Task
+                        displayTask={this.props.displayTask}
                         task={task}
                         key={i++ + ':' + task.key}
                     />
@@ -25,17 +26,24 @@ class Card extends Component {
             <div>
                 {
                     this.props.card.isFrontDays || this.props.card.isRearDays ?
-                        <div className='date-card frontDays' onClick={this.props.assignTaskToCard}>
-                            <p>{this.props.card.day}</p>
-                            <div>
-                                {this.generateTaskCards()}
+                        <div style={{ height: '100%' }}>
+                            <div className='date-card frontDays' >
+                                <p >{this.props.card.day}</p>
+                                {this.generateTaskCards(this.props.tasks)}
+                                <div onClick={this.props.displayModal} style={{ height: '90%' }}></div>
                             </div>
                         </div>
                         :
-                        <div className='date-card' onClick={this.props.assignTaskToCard}>
-                            <p>{this.props.card.day}</p>
-                            <div>
-                                {this.generateTaskCards()}
+                        <div style={{ height: '100%' }}>
+                            <div className='date-card' >
+                                {
+                                    this.props.isToday ?
+                                        <p ><span>{this.props.card.day}</span></p>
+                                        :
+                                        <p >{this.props.card.day}</p>
+                                }
+                                {this.generateTaskCards(this.props.tasks)}
+                                <div onClick={this.props.displayModal} style={{ height: '90%' }}></div>
                             </div>
                         </div>
 

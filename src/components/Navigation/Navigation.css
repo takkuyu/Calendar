@@ -5,8 +5,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2em 5em;
-  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0 5em;
+  height: 10vh;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 header #bar-icon {
@@ -16,14 +17,24 @@ header #bar-icon {
 header h1 {
   padding: 0;
   margin: 0;
+  font-size: 3em;
+  font-weight: 300;
 }
 
 header h2 {
   padding: 0;
   margin: 0;
+  font-size: 2.5em;
+  font-weight: 300;
 }
 
 header > div {
   padding-right: 2em;
+}
+
+header .angle {
+  font-size: 4em;
+  display: inline-block;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Navigation.css.map */

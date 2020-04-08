@@ -1,0 +1,140 @@
+.modal-window {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.modal-window .modal-content {
+  width: 45em;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.modal-window .modal-content input {
+  display: block;
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.54) 1px solid;
+}
+
+.modal-window .modal-content input:focus {
+  outline: none;
+}
+
+.modal-window .modal-content .close-btn {
+  font-size: 2rem;
+  float: right;
+  cursor: pointer;
+}
+
+.modal-window .modal-content .task-field {
+  width: 80%;
+  font-size: 2.5em;
+  margin: 2rem auto 1rem;
+}
+
+.modal-window .modal-content .inner-fields {
+  margin: 0 auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+}
+
+.modal-window .modal-content .inner-fields .icon-field {
+  width: 10%;
+}
+
+.modal-window .modal-content .inner-fields .icon-field i {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.modal-window .modal-content .inner-fields .icon-field i:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.modal-window .modal-content .inner-fields .inputs-field {
+  width: 90%;
+  padding-left: 2rem;
+}
+
+.modal-window .modal-content .inner-fields .inputs-field input {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.modal-window .modal-content .inner-fields .inputs-field input:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.modal-window .modal-content button {
+  font-size: 1rem;
+  background: #fff;
+  padding: .4rem .8rem;
+  border-radius: 5px;
+  border-color: #3f51b5;
+  color: #3f51b5;
+  cursor: pointer;
+  float: right;
+}
+
+.modal-window .modal-content button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-window .modal-content .task-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-window .modal-content .task-modal .task-modal-left i {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.modal-window .modal-content .task-modal .task-modal-left i:not(:last-child) {
+  padding-bottom: 1.2rem;
+}
+
+.modal-window .modal-content .task-modal .task-modal-right {
+  padding-left: 2em;
+}
+
+.modal-window .modal-content .task-modal .task-modal-right h1 {
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+}
+
+.modal-window .modal-content .task-modal .task-modal-right h2 {
+  letter-spacing: .2em;
+  font-weight: 300;
+  padding-bottom: 1.2rem;
+  margin: 0;
+}
+
+.modal-window .modal-content .task-modal .task-modal-right p {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.modal-window .modal-content .task-modal .task-modal-right p:not(:last-child) {
+  padding-bottom: 1.2rem;
+}
+/*# sourceMappingURL=App.css.map */

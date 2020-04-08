@@ -1,7 +1,30 @@
 .date-card {
-  padding: 3rem;
+  height: 100%;
   text-align: center;
   border: 1px solid #dddddd;
+}
+
+.date-card > p {
+  height: 10%;
+  /* margin: 0; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  font-size: .7rem;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 3%;
+}
+
+.date-card > p span {
+  background-color: #1a73e8;
+  color: white;
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  border-radius: 0.8rem;
 }
 
 .frontDays {

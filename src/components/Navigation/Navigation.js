@@ -3,24 +3,20 @@ import './Navigation.css'
 
 
 const Navigation = (props) => {
-    // let adjestment = 0;
-    // console.log(props.today)
-    // if(props.today.month <=0){
-    //     adjestment = props.today.month + 12;
-    // }
+
     return (
         <header>
             <div>
                 <i className="fas fa-bars" id='bar-icon'></i>
             </div>
             <div>
-                <h1><i className="fas fa-calendar-alt"></i>Calendar</h1>
+                <h1><i className="fas fa-calendar-alt" style={{ paddingRight: '.5em', fontWeight: '100', color:'rgb(26, 115, 232)' }}></i><span style={{ color: 'rgb(26, 115, 232)', fontWeight: '700' }}>React</span> Calendar</h1>
             </div>
             <div>
-                <button onClick={props.generateLastMonthBoard}> &larr; </button>
-                <button onClick={props.generateNextMonthBoard}>&rarr;</button>
+                <i onClick={props.generateLastMonthBoard} className="fas fa-angle-left angle" style={{ marginRight: '.5em' }}></i>
+                <i onClick={props.generateNextMonthBoard} className="fas fa-angle-right angle"></i>
             </div>
-            <h2>{props.today.month}, {props.today.year}</h2>
+            <h2>{props.today.month} / {props.today.year}</h2>
         </header>
     );
 }

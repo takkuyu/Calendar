@@ -1,0 +1,16 @@
+.task-container {
+    background-color: rgb(3, 155, 229);
+    width: 90%;
+    margin: 0px auto;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    float: left;
+    margin:5%;
+}
+
+.task-container p {
+    margin: 0;
+}

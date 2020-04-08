@@ -1,0 +1,143 @@
+.modal-window {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.54);
+
+    .modal-content {
+        width: 45em;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+
+        input {
+            display: block;
+            border: none;
+            border-bottom: rgba(0, 0, 0, 0.54) 1px solid;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .close-btn {
+            // display: inline-block;
+            font-size: 2rem;
+            float: right;
+            cursor: pointer;
+            // margin: 1rem;
+        }
+
+        .task-field {
+            width: 80%;
+            font-size: 2.5em;
+            margin: 2rem auto 1rem;
+        }
+
+
+        .inner-fields {
+            // width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            // justify-content: center;
+            padding: 2rem;
+
+            .icon-field {
+                width: 10%;
+
+                i {
+                    display: block;
+                    font-size: 1.5rem;
+
+                    &:not(:last-child) {
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+
+            .inputs-field {
+                width: 90%;
+                padding-left: 2rem;
+
+                input {
+                    width: 100%;
+                    font-size: 1rem;
+
+                    &:not(:last-child) {
+                        margin-bottom: 1.25rem;
+                    }
+                }
+            }
+        }
+
+        button {
+            font-size: 1rem;
+            background: #fff;
+            padding: .4rem .8rem;
+            border-radius: 5px;
+            border-color: #3f51b5;
+            color: #3f51b5;
+            cursor: pointer;
+            float: right;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, .1);
+            }
+        }
+
+        .task-modal {
+
+            display: flex;
+
+
+            .task-modal-left {
+                i {
+                    display: block;
+                    font-size: 1rem;
+                    font-weight: bold;
+
+                    &:not(:last-child) {
+                        padding-bottom: 1.2rem;
+                    }
+                }
+            }
+
+            .task-modal-right {
+                padding-left: 2em;
+
+                h1{
+                    font-weight: 500;
+                    margin: 0;
+                    line-height: 1;
+                }
+
+                h2{
+                    
+                    letter-spacing: .2em;
+                    font-weight: 300;
+                    padding-bottom: 1.2rem;
+                    margin: 0;
+
+                }
+
+                p{
+                    margin: 0;
+                    font-size: 1.4em;
+                    &:not(:last-child) {
+                        padding-bottom: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// html{
+//     font-size: 20px;
+// }
