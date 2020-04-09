@@ -169,6 +169,7 @@ class App extends Component {
         board.push({
           day: gapCounter,
           month: month,
+          year: today.year,
           isFrontDays: isFrontDays,
           isRearDays: isRearDays,
         })
@@ -187,42 +188,42 @@ class App extends Component {
       board.push({
         day: dayCounter,
         month: month,
+        year: today.year,
         isFrontDays: isFrontDays,
         isRearDays: isRearDays,
       })
       dayCounter++;
     }
 
-    return this.displayBoard(board, today.year)
+    return this.displayBoard(board)
   }
 
 
 
-  displayBoard(board, year) { //@TODO ; Replace year with card.year
+  displayBoard(board) { 
     const today = String(new Date()).substring(0, 10);
-    // const thisyear = year;
 
     return board.map(card => {
       const tasks = [];
-      // year = thisyear
       let isToday = false;
 
       if(card.month === 0){
         card.month = 12;
+        card.year = card.year - 1
         console.log(card)
-        year = year -1;
       }else if(card.month === 13){
         card.month = 1;
+        card.year = card.year + 1
       }
 
       this.state.tasks.forEach(task => {
-        const thisCardKey = card.day + '/' + card.month + '/' + year;
+        const thisCardKey = card.day + '/' + card.month + '/' + card.year;
         if (task.key === thisCardKey) {
           tasks.push(task)
         }
       })
 
-      const thisday = String(new Date(year, card.month - 1, card.day)).substring(0, 10);
+      const thisday = String(new Date(card.year, card.month - 1, card.day)).substring(0, 10);
 
       if (today === thisday) {
         isToday = !isToday;
@@ -234,10 +235,9 @@ class App extends Component {
           card={card}
           isToday={isToday}
           tasks={tasks}
-          key={card.day + '/' + card.month + '/' + year} //@TODO: Fix Jan and April number problem, 0 and 13.
-          displayModal={() => { this.displayModal(card.day + '/' + card.month + '/' + year) }}
+          key={card.day + '/' + card.month + '/' + card.year} 
+          displayModal={() => { this.displayModal(card.day + '/' + card.month + '/' + card.year) }}
           displayTask={this.displayTask}
-        // assignTaskToCard={() => this.assignTaskToCard(card.day + '/' + card.month + '/' + year)}
         />
       )
     })
@@ -255,7 +255,6 @@ class App extends Component {
 
 
   render() {
-    // console.log('render in App.js')
     return (
       <div className="App" >
         {

@@ -22,33 +22,43 @@ class Card extends Component {
         }
     }
 
+    getMonthName(card) {
+        if (card.day === 1) {
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            return months[card.month - 1] + ' ';
+        }
+    }
+
     render() {
         return (
-            <div>
-                {
-                    this.props.card.isFrontDays || this.props.card.isRearDays ?
-                        <div style={{ height: '100%' }}>
-                            <div className='date-card frontDays' >
-                                <p >{this.props.card.day}</p>
-                                {this.generateTaskCards(this.props.tasks)}
-                                <div onClick={this.props.displayModal} style={{ height: '90%' }}></div>
-                            </div>
-                        </div>
-                        :
-                        <div style={{ height: '100%' }}>
-                            <div className='date-card' >
+            <div style={{ height: '100%' }}>
+                <div className='date-card' >
+                    {
+                        this.props.isToday ?
+                            <p className='day-container'>
+                                <span>{this.getMonthName(this.props.card)}</span>
+                                <span className='today'>{this.props.card.day}</span>
+                            </p>
+                            :
+                            <div>
                                 {
-                                    this.props.isToday ?
-                                        <p ><span>{this.props.card.day}</span></p>
+                                    this.props.card.isFrontDays || this.props.card.isRearDays ?
+                                        <p className='day-container'>
+                                            <span style={{ color: 'rgba(0, 0, 0, 0.54)' }}>{this.getMonthName(this.props.card)}</span>
+                                            <span style={{ color: 'rgba(0, 0, 0, 0.54)' }}>{this.props.card.day}</span>
+                                        </p>
                                         :
-                                        <p >{this.props.card.day}</p>
+                                        <p className='day-container'>
+                                            <span>{this.getMonthName(this.props.card)}</span>
+                                            <span>{this.props.card.day}</span>
+                                        </p>
                                 }
-                                {this.generateTaskCards(this.props.tasks)}
-                                <div onClick={this.props.displayModal} style={{ height: '90%' }}></div>
                             </div>
-                        </div>
-
-                }
+                    }
+                    {this.generateTaskCards(this.props.tasks)}
+                    <div onClick={this.props.displayModal} style={{ height: '90%' }}></div>
+                </div>
             </div>
         );
     }

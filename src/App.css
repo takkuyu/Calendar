@@ -117,7 +117,17 @@
 }
 
 .modal-window .modal-content .task-modal .task-modal-right {
+  overflow: scroll;
+  /* IE, Edge  */
+  -ms-overflow-style: none;
+  /* Firefox  */
+  scrollbar-width: none;
+  /* Chrome, Safari  */
   padding-left: 2em;
+}
+
+.modal-window .modal-content .task-modal .task-modal-right::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-window .modal-content .task-modal .task-modal-right h1 {

@@ -2,14 +2,21 @@
   height: 100%;
   text-align: center;
   border: 1px solid #dddddd;
+  border-top: none;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  /* IE, Edge  */
+  scrollbar-width: none;
+  /* Firefox  */
 }
 
-.date-card > p {
+.date-card::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari  */
+}
+
+.date-card .day-container {
   height: 10%;
-  /* margin: 0; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   font-size: .7rem;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -17,14 +24,17 @@
   padding-top: 3%;
 }
 
-.date-card > p span {
+.date-card .day-container .today {
   background-color: #1a73e8;
   color: white;
   display: inline-block;
   width: 1.3rem;
-  height: 1.3rem;
   line-height: 1.3rem;
   border-radius: 0.8rem;
+}
+
+.date-card .day-container span {
+  font-weight: 500;
 }
 
 .frontDays {

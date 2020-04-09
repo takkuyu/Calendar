@@ -89,7 +89,8 @@
             &:hover {
                 background-color: rgba(0, 0, 0, .1);
             }
-            &:focus{
+
+            &:focus {
                 outline: 0;
             }
         }
@@ -112,16 +113,26 @@
             }
 
             .task-modal-right {
+                overflow: scroll;
+                /* IE, Edge  */
+                -ms-overflow-style: none;
+                /* Firefox  */
+                scrollbar-width: none;
+                /* Chrome, Safari  */
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
                 padding-left: 2em;
 
-                h1{
+                h1 {
                     font-weight: 500;
                     margin: 0;
                     line-height: 1;
                 }
 
-                h2{
-                    
+                h2 {
+
                     letter-spacing: .2em;
                     font-weight: 300;
                     padding-bottom: 1.2rem;
@@ -129,9 +140,10 @@
 
                 }
 
-                p{
+                p {
                     margin: 0;
                     font-size: 1.4em;
+
                     &:not(:last-child) {
                         padding-bottom: 1.2rem;
                     }

@@ -1,7 +1,7 @@
 .grid-board {
   display: -ms-grid;
   display: grid;
-  height: 90vh;
+  height: 98.5%;
   -ms-grid-columns: 14% 14% 14% 14% 14% 14% 14%;
       grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
   -ms-grid-rows: 20% 20% 20% 20% 20%;
@@ -9,5 +9,29 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.dayNames {
+  height: 1.5%;
+}
+
+.dayNames ul {
+  height: 100%;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 14% 14% 14% 14% 14% 14% 14%;
+      grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.dayNames ul li {
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-bottom: none;
 }
 /*# sourceMappingURL=Board.css.map */
