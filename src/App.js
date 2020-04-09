@@ -200,18 +200,18 @@ class App extends Component {
 
 
 
-  displayBoard(board) { 
+  displayBoard(board) {
     const today = String(new Date()).substring(0, 10);
 
     return board.map(card => {
       const tasks = [];
       let isToday = false;
 
-      if(card.month === 0){
+      if (card.month === 0) {
         card.month = 12;
         card.year = card.year - 1
         console.log(card)
-      }else if(card.month === 13){
+      } else if (card.month === 13) {
         card.month = 1;
         card.year = card.year + 1
       }
@@ -235,7 +235,7 @@ class App extends Component {
           card={card}
           isToday={isToday}
           tasks={tasks}
-          key={card.day + '/' + card.month + '/' + card.year} 
+          key={card.day + '/' + card.month + '/' + card.year}
           displayModal={() => { this.displayModal(card.day + '/' + card.month + '/' + card.year) }}
           displayTask={this.displayTask}
         />
@@ -251,6 +251,16 @@ class App extends Component {
       tasks: filteredTasks,
       taskModal: false
     })
+  }
+
+  formatDate(date) {
+    let str = date.split('/')
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const month = months[str[1] - 1];
+    str = month + ' ' + str[0] + ', ' + str[2];
+
+    return str
   }
 
 
@@ -279,7 +289,7 @@ class App extends Component {
                         <i className="far fa-sticky-note"></i>
                       </div>
                       <div className='inputs-field'>
-                        <input readOnly type="text" style={{ letterSpacing: '4px' }} value={this.state.date} />
+                        <input readOnly type="text" style={{ letterSpacing: '.1rem', border:'none' }} value={this.formatDate(this.state.date)} />
                         <input onChange={this.onSetLocation} type="text" placeholder='Add location' />
                         <input onChange={this.onSetDescription} type="text" placeholder='Add description' />
                       </div>
@@ -295,7 +305,7 @@ class App extends Component {
                     </div>
                     <div className='task-modal-right'>
                       <h1>{this.state.task}</h1>
-                      <h2>{this.state.date}</h2>
+                      <h2>{this.formatDate(this.state.date)}</h2>
                       <p>{this.state.location}</p>
                       <p>{this.state.description}</p>
                     </div>
