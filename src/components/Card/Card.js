@@ -7,7 +7,6 @@ import Task from '../Task/Task';
 class Card extends Component {
 
     generateTaskCards(tasks) {
-        // console.log(tasks)
         if (tasks.length > 0) {
             let i = 1;
             return tasks.map(task => {
@@ -36,12 +35,14 @@ class Card extends Component {
                 <div className='date-card' >
                     {
                         this.props.isToday ?
-                            <p className='day-container'>
-                                <span>{this.getMonthName(this.props.card)}</span>
-                                <span className='today'>{this.props.card.day}</span>
-                            </p>
+                            <div style={{ height: '10%' }}>
+                                <p className='day-container'>
+                                    <span>{this.getMonthName(this.props.card)}</span>
+                                    <span className='today'>{this.props.card.day}</span>
+                                </p>
+                            </div>
                             :
-                            <div>
+                            <div style={{ height: '10%' }}>
                                 {
                                     this.props.card.isFrontDays || this.props.card.isRearDays ?
                                         <p className='day-container'>
