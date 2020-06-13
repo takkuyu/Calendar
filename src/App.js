@@ -94,7 +94,6 @@ class App extends Component {
   }
 
   displayTask(task) {
-    console.log(task)
     this.setState({
       taskModal: true,
       date: task.key,
@@ -113,7 +112,6 @@ class App extends Component {
 
   assignTaskToCard(e) {
     e.preventDefault();
-
     const tasksArray = this.state.tasks;
     if (this.state.task === '') {
       console.log('empty')
@@ -126,7 +124,6 @@ class App extends Component {
       location: this.state.location,
       description: this.state.description,
     })
-
     this.setState({
       tasks: tasksArray,
       modal: false
@@ -198,8 +195,6 @@ class App extends Component {
     return this.displayBoard(board)
   }
 
-
-
   displayBoard(board) {
     const today = String(new Date()).substring(0, 10);
 
@@ -210,7 +205,6 @@ class App extends Component {
       if (card.month === 0) {
         card.month = 12;
         card.year = card.year - 1
-        console.log(card)
       } else if (card.month === 13) {
         card.month = 1;
         card.year = card.year + 1
@@ -228,7 +222,6 @@ class App extends Component {
       if (today === thisday) {
         isToday = !isToday;
       }
-
 
       return (
         <Card
